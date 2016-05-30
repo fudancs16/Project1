@@ -1,0 +1,56 @@
+2016-04-25 17:01:30,681 [main] INFO  schedule.Engine - 
+DataX engine [version=1] storage[com.taobao.datax.engine.storage.RAMStorage size 3000/1000000 buffer 50] pluginpath[plugins/]
+
+2016-04-25 17:01:30,689 [main] INFO  schedule.Engine - 
+
+job:streamreader_to_streamwriter_job
+Reader conf:
+name:streamreader id virgin-reader, pool(1) destruct(0)
+params:
+	              null_string=[\N                            ]
+	              concurrency=[1                             ]
+	                 encoding=[UTF-8                         ]
+	                      src=[f://test                      ]
+	              field_split=[\t                            ]
+
+Writer conf [num 1]:
+name:streamwriter id virgin-writer, pool(1) destruct(0)
+params:
+	                   prefix=[stream                        ]
+	              concurrency=[1                             ]
+	                 encoding=[UTF-8                         ]
+	                    print=[true                          ]
+	              field_split=[\t                            ]
+	                     dist=[f://test.txt                  ]
+
+2016-04-25 17:01:30,689 [main] INFO  schedule.Engine - DataX startups .
+2016-04-25 17:01:30,697 [main] INFO  schedule.Engine - DataX Reader streamreader try to load path plugins/reader/streamreader .
+2016-04-25 17:01:30,709 [main] INFO  schedule.Engine - DataX Reader prepare work begins .
+2016-04-25 17:01:30,709 [main] INFO  schedule.Engine - DataX Reader prepare work ends .
+2016-04-25 17:01:30,709 [main] INFO  schedule.Engine - DataX Reader split work begins .
+2016-04-25 17:01:30,709 [main] INFO  schedule.Engine - DataX Reader splits this job into 1 sub-jobs
+2016-04-25 17:01:30,709 [main] INFO  schedule.Engine - DataX Reader split work ends .
+2016-04-25 17:01:30,714 [main] INFO  schedule.Engine - DataX Reader starts to read data .
+2016-04-25 17:01:30,717 [main] INFO  schedule.Engine - DataX Writer streamwriter try to load path plugins/writer/streamwriter .
+2016-04-25 17:01:30,721 [main] INFO  schedule.Engine - DataX Writer prepare work begins .
+2016-04-25 17:01:30,721 [main] INFO  schedule.Engine - DataX Writer prepare work ends .
+2016-04-25 17:01:30,721 [main] INFO  schedule.Engine - DataX Writer split work begins .
+2016-04-25 17:01:30,721 [main] INFO  schedule.Engine - DataX Writer splits this job into 1 sub-jobs .
+2016-04-25 17:01:30,721 [main] INFO  schedule.Engine - DataX Writer split work ends .
+2016-04-25 17:01:30,722 [main] INFO  schedule.Engine - DataX Writer starts to write data .
+2016-04-25 17:01:30,722 [main] INFO  schedule.Engine - DataX starts to exchange data .
+2016-04-25 17:01:32,723 [main] INFO  schedule.Engine - DataX Reader post work begins .
+2016-04-25 17:01:32,723 [main] INFO  schedule.Engine - DataX Reader post work ends .
+2016-04-25 17:01:32,724 [main] INFO  schedule.Engine - DataX Writers post work begins .
+2016-04-25 17:01:32,724 [main] INFO  schedule.Engine - DataX Writers post work ends .
+2016-04-25 17:01:32,725 [main] INFO  schedule.Engine - DataX job succeed .
+2016-04-25 17:01:32,736 [main] INFO  schedule.Engine - 
+DataX starts work at      : 2016-04-25 17:01:30
+DataX ends work at        : 2016-04-25 17:01:32
+Total time costs          :                  2s
+Average byte speed        :               12B/s
+Average line speed        :                2L/s
+Total transferred records :                   4
+Total discarded records   :                   0
+
+2016-04-25 17:01:37,908 [main] INFO  schedule.Reporter - Report DataX statistic failed, connect timed out

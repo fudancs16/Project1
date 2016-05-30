@@ -1,0 +1,69 @@
+2016-04-25 17:32:18,768 [main] INFO  schedule.Engine - 
+DataX engine [version=1] storage[com.taobao.datax.engine.storage.RAMStorage size 3000/1000000 buffer 50] pluginpath[plugins/]
+
+2016-04-25 17:32:18,784 [main] INFO  schedule.Engine - 
+
+job:mysqlreader_to_streamwriter_job
+Reader conf:
+name:mysqlreader id virgin-reader, pool(1) destruct(0)
+params:
+	                   tables=[student                       ]
+	                     port=[3306                          ]
+	                 username=[root                          ]
+	                   dbname=[test                          ]
+	              concurrency=[1                             ]
+	                 encoding=[UTF-8                         ]
+	                 password=[                              ]
+	                       ip=[127.0.0.1                     ]
+
+Writer conf [num 1]:
+name:streamwriter id virgin-writer, pool(1) destruct(0)
+params:
+	              concurrency=[1                             ]
+	                 encoding=[UTF-8                         ]
+	                    print=[true                          ]
+	              field_split=[\t                            ]
+
+2016-04-25 17:32:18,784 [main] INFO  schedule.Engine - DataX startups .
+2016-04-25 17:32:18,784 [main] INFO  schedule.Engine - DataX Reader mysqlreader try to load path plugins/reader/mysqlreader .
+2016-04-25 17:32:18,799 [main] INFO  schedule.Engine - DataX Reader prepare work begins .
+2016-04-25 17:32:18,799 [main] INFO  mysqlreader.MysqlReader - MysqlReader try connection: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&yearIsDateType=false&zeroDateTimeBehavior=convertToNull&defaultFetchSize=-2147483648 .
+2016-04-25 17:32:19,301 [main] INFO  common.DBSource - Key [abd75cc280506a28] register database pool successfully .
+2016-04-25 17:32:19,301 [main] INFO  schedule.Engine - DataX Reader prepare work ends .
+2016-04-25 17:32:19,305 [main] INFO  schedule.Engine - DataX Reader split work begins .
+2016-04-25 17:32:19,307 [main] INFO  mysqlreader.MysqlReaderSplitter - MysqlReaderSpliter initialize successfully.
+2016-04-25 17:32:19,307 [main] INFO  mysqlreader.MysqlReaderSplitter -  MysqlReaderSpliter splits successfully.
+2016-04-25 17:32:19,307 [main] INFO  common.DBSource - Key [abd75cc280506a28] connect to database pool successfully .
+2016-04-25 17:32:19,307 [main] INFO  schedule.Engine - DataX Reader splits this job into 1 sub-jobs
+2016-04-25 17:32:19,307 [main] INFO  schedule.Engine - DataX Reader split work ends .
+2016-04-25 17:32:19,307 [main] INFO  schedule.Engine - DataX Reader starts to read data .
+2016-04-25 17:32:19,307 [main] INFO  schedule.Engine - DataX Writer streamwriter try to load path plugins/writer/streamwriter .
+2016-04-25 17:32:19,323 [main] ERROR schedule.PluginWorker - java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.taobao.datax.engine.schedule.PluginWorker.init(PluginWorker.java:140)
+	at com.taobao.datax.engine.schedule.Engine.initWriterPool(Engine.java:318)
+	at com.taobao.datax.engine.schedule.Engine.start(Engine.java:91)
+	at com.taobao.datax.engine.schedule.Engine.main(Engine.java:407)
+Caused by: java.lang.IllegalArgumentException: Job Configuration Option [ dist ] is missing .
+	at com.taobao.datax.engine.plugin.DefaultPluginParam.getValue(DefaultPluginParam.java:105)
+	at com.taobao.datax.plugins.writer.streamwriter.StreamWriter.init(StreamWriter.java:45)
+	... 8 more
+
+2016-04-25 17:32:19,323 [main] ERROR schedule.Engine - java.lang.IllegalArgumentException: Job Configuration Option [ dist ] is missing .
+	at com.taobao.datax.engine.schedule.PluginWorker.init(PluginWorker.java:143)
+	at com.taobao.datax.engine.schedule.Engine.initWriterPool(Engine.java:318)
+	at com.taobao.datax.engine.schedule.Engine.start(Engine.java:91)
+	at com.taobao.datax.engine.schedule.Engine.main(Engine.java:407)
+Caused by: java.lang.IllegalArgumentException: Job Configuration Option [ dist ] is missing .
+	at com.taobao.datax.engine.plugin.DefaultPluginParam.getValue(DefaultPluginParam.java:105)
+	at com.taobao.datax.plugins.writer.streamwriter.StreamWriter.init(StreamWriter.java:45)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.taobao.datax.engine.schedule.PluginWorker.init(PluginWorker.java:140)
+	... 3 more
+

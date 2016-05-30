@@ -1,0 +1,59 @@
+2016-04-25 16:15:05,472 [main] INFO  schedule.Engine - 
+DataX engine [version=1] storage[com.taobao.datax.engine.storage.RAMStorage size 3000/1000000 buffer 50] pluginpath[plugins/]
+
+2016-04-25 16:15:05,479 [main] INFO  schedule.Engine - 
+
+job:streamreader_to_streamwriter_job
+Reader conf:
+name:streamreader id virgin-reader, pool(1) destruct(0)
+params:
+	              concurrency=[1                             ]
+	                 encoding=[UTF-8                         ]
+	                      src=[f://test/1.txt                ]
+	              field_split=[\t                            ]
+
+Writer conf [num 1]:
+name:streamwriter id virgin-writer, pool(1) destruct(0)
+params:
+	              concurrency=[1                             ]
+	                 encoding=[UTF-8                         ]
+	                    print=[true                          ]
+	              field_split=[\t                            ]
+
+2016-04-25 16:15:05,479 [main] INFO  schedule.Engine - DataX startups .
+2016-04-25 16:15:05,487 [main] INFO  schedule.Engine - DataX Reader streamreader try to load path plugins/reader/streamreader .
+2016-04-25 16:15:05,495 [main] INFO  schedule.Engine - DataX Reader prepare work begins .
+2016-04-25 16:15:05,495 [main] INFO  schedule.Engine - DataX Reader prepare work ends .
+2016-04-25 16:15:05,495 [main] INFO  schedule.Engine - DataX Reader split work begins .
+2016-04-25 16:15:05,495 [main] INFO  schedule.Engine - DataX Reader splits this job into 1 sub-jobs
+2016-04-25 16:15:05,495 [main] INFO  schedule.Engine - DataX Reader split work ends .
+2016-04-25 16:15:05,499 [main] INFO  schedule.Engine - DataX Reader starts to read data .
+2016-04-25 16:15:05,503 [main] INFO  schedule.Engine - DataX Writer streamwriter try to load path plugins/writer/streamwriter .
+2016-04-25 16:15:05,503 [pool-1-thread-1] ERROR streamreader.StreamReader - java.io.FileNotFoundException: 
+	at java.io.FileInputStream.open(Native Method)
+	at java.io.FileInputStream.<init>(Unknown Source)
+	at com.taobao.datax.plugins.reader.streamreader.StreamReader.readFile(StreamReader.java:78)
+	at com.taobao.datax.plugins.reader.streamreader.StreamReader.startRead(StreamReader.java:108)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.taobao.datax.engine.schedule.ReaderWorker.run(ReaderWorker.java:92)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+
+2016-04-25 16:15:05,503 [pool-1-thread-1] ERROR schedule.ReaderWorker - java.lang.reflect.InvocationTargetException
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at com.taobao.datax.engine.schedule.ReaderWorker.run(ReaderWorker.java:92)
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(Unknown Source)
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: null
+	at com.taobao.datax.plugins.reader.streamreader.StreamReader.readFile(StreamReader.java:94)
+	at com.taobao.datax.plugins.reader.streamreader.StreamReader.startRead(StreamReader.java:108)
+	... 8 more
+

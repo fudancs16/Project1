@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/ant-contrib-1.0b3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/commons-dbcp-1.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/commons-io-2.0.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/commons-logging-1.1.1.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/commons-pool-1.5.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/dom4j-2.0.0-ALPHA-2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/hadoop-0.19.2-core.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/hadoop-0.20.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/hbase-0.90.2.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/jaxen-1.1-beta-6.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/junit-4.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/log4j-1.2.16.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/mysql-connector-java-5.1.18-bin.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/ojdbc14_10.2.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/slf4j-api-1.4.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/slf4j-log4j12-1.4.3.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/sqljdbc4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/刘晓雨/Desktop/新建文件夹/trunk/libs/zookeeper-3.3.3.jar"/>
+	<classpathentry kind="output" path="build"/>
+</classpath>

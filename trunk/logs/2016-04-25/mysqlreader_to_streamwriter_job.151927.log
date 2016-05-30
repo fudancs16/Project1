@@ -1,0 +1,64 @@
+2016-04-25 15:19:27,155 [main] INFO  schedule.Engine - 
+DataX engine [version=1] storage[com.taobao.datax.engine.storage.RAMStorage size 3000/1000000 buffer 50] pluginpath[plugins/]
+
+2016-04-25 15:19:27,164 [main] INFO  schedule.Engine - 
+
+job:mysqlreader_to_streamwriter_job
+Reader conf:
+name:mysqlreader id virgin-reader, pool(1) destruct(0)
+params:
+	                   tables=[student                       ]
+	                     port=[3306                          ]
+	                 username=[root                          ]
+	                   dbname=[test                          ]
+	              concurrency=[1                             ]
+	                 encoding=[UTF-8                         ]
+	                 password=[                              ]
+	                       ip=[127.0.0.1                     ]
+
+Writer conf [num 1]:
+name:streamwriter id virgin-writer, pool(1) destruct(0)
+params:
+	              concurrency=[1                             ]
+	                 encoding=[UTF-8                         ]
+	                    print=[true                          ]
+	              field_split=[\t                            ]
+
+2016-04-25 15:19:27,164 [main] INFO  schedule.Engine - DataX startups .
+2016-04-25 15:19:27,172 [main] INFO  schedule.Engine - DataX Reader mysqlreader try to load path plugins/reader/mysqlreader .
+2016-04-25 15:19:27,185 [main] INFO  schedule.Engine - DataX Reader prepare work begins .
+2016-04-25 15:19:27,185 [main] INFO  mysqlreader.MysqlReader - MysqlReader try connection: jdbc:mysql://127.0.0.1:3306/test?useUnicode=true&characterEncoding=UTF-8&yearIsDateType=false&zeroDateTimeBehavior=convertToNull&defaultFetchSize=-2147483648 .
+2016-04-25 15:19:27,807 [main] INFO  common.DBSource - Key [abd75cc280506a28] register database pool successfully .
+2016-04-25 15:19:27,807 [main] INFO  schedule.Engine - DataX Reader prepare work ends .
+2016-04-25 15:19:27,807 [main] INFO  schedule.Engine - DataX Reader split work begins .
+2016-04-25 15:19:27,810 [main] INFO  mysqlreader.MysqlReaderSplitter - MysqlReaderSpliter initialize successfully.
+2016-04-25 15:19:27,811 [main] INFO  mysqlreader.MysqlReaderSplitter -  MysqlReaderSpliter splits successfully.
+2016-04-25 15:19:27,813 [main] INFO  common.DBSource - Key [abd75cc280506a28] connect to database pool successfully .
+2016-04-25 15:19:27,861 [main] INFO  schedule.Engine - DataX Reader splits this job into 1 sub-jobs
+2016-04-25 15:19:27,861 [main] INFO  schedule.Engine - DataX Reader split work ends .
+2016-04-25 15:19:27,865 [main] INFO  schedule.Engine - DataX Reader starts to read data .
+2016-04-25 15:19:27,868 [main] INFO  schedule.Engine - DataX Writer streamwriter try to load path plugins/writer/streamwriter .
+2016-04-25 15:19:27,872 [main] INFO  schedule.Engine - DataX Writer prepare work begins .
+2016-04-25 15:19:27,872 [main] INFO  schedule.Engine - DataX Writer prepare work ends .
+2016-04-25 15:19:27,872 [main] INFO  schedule.Engine - DataX Writer split work begins .
+2016-04-25 15:19:27,872 [main] INFO  schedule.Engine - DataX Writer splits this job into 1 sub-jobs .
+2016-04-25 15:19:27,873 [main] INFO  schedule.Engine - DataX Writer split work ends .
+2016-04-25 15:19:27,873 [main] INFO  schedule.Engine - DataX Writer starts to write data .
+2016-04-25 15:19:27,874 [main] INFO  schedule.Engine - DataX starts to exchange data .
+2016-04-25 15:19:27,884 [pool-1-thread-1] INFO  common.DBSource - Key [abd75cc280506a28] connect to database pool successfully .
+2016-04-25 15:19:27,886 [pool-1-thread-1] INFO  mysqlreader.MysqlReader - MysqlReader start to query select * from student .
+2016-04-25 15:19:29,875 [main] INFO  schedule.Engine - DataX Reader post work begins .
+2016-04-25 15:19:29,875 [main] INFO  schedule.Engine - DataX Reader post work ends .
+2016-04-25 15:19:29,875 [main] INFO  schedule.Engine - DataX Writers post work begins .
+2016-04-25 15:19:29,875 [main] INFO  schedule.Engine - DataX Writers post work ends .
+2016-04-25 15:19:29,876 [main] INFO  schedule.Engine - DataX job succeed .
+2016-04-25 15:19:29,881 [main] INFO  schedule.Engine - 
+DataX starts work at      : 2016-04-25 15:19:27
+DataX ends work at        : 2016-04-25 15:19:29
+Total time costs          :                  2s
+Average byte speed        :               10B/s
+Average line speed        :                1L/s
+Total transferred records :                   2
+Total discarded records   :                   0
+
+2016-04-25 15:19:35,052 [main] INFO  schedule.Reporter - Report DataX statistic failed, connect timed out
